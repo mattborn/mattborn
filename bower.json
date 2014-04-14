@@ -1,0 +1,12 @@
+{
+  "name": "mattborn",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "*",
+    "lodash": "*",
+    "backbone": "*",
+    "moment": "*",
+    "mustache": "*",
+    "widowtamer": "git://github.com/nathanford/widowtamer.git"
+  }
+}

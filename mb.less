@@ -1,0 +1,98 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,700|Lora);
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+.underline(@color, @y: 1em) {
+	background-image: linear-gradient(to bottom, transparent 50%, @color 50%);
+	background-position: 0 @y;
+	background-repeat: repeat-x;
+	background-size: 2px 2px;
+	text-decoration: none;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	color: #444;
+	font: 100%/1 'Lato', sans-serif;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+body { margin: 0 auto; }
+
+h1 { margin: 0; }
+
+a { color: inherit; cursor: pointer; }
+
+.doc { font: 18px/1.5 'Lora', serif;
+	h1,
+	h2,
+	h3 { font-family: 'Lato'; line-height: 1; }
+	a { .underline(#aa9); }
+}
+
+/*  Front  */
+
+.uno,
+.dos { display: inline-block; vertical-align: middle; }
+.uno { width: 300px; }
+.dos { width: 900px; }
+
+.front { width: 1200px; color: #aa9;
+	&-cover { border-bottom: 1px solid #eed; padding-bottom: 50px; }
+	&-h1 {
+		font-size: 50px;
+		font-weight: 300;
+		line-height: 1.2;
+		padding: 100px;
+
+		a { .underline(#aa9, 52px); }
+	}
+	&-pi { max-width: 600px; margin: 50px auto; padding: 0 20px; }
+	&-footer { padding: 50px 0; text-align: center; }
+}
+
+.menu {
+	&-open {
+		width: 50px; height: 50px;
+		color: #ddc;
+		font-size: 28px;
+		line-height: 50px;
+		opacity: .7;
+		position: fixed;
+		top: 0; left: 0;
+		text-align: center;
+
+		&:hover { background: rgba(255,255,255,.2); opacity: 1; }
+	}
+}
+
+@media (max-width: 1280px) {
+	.front { width: 900px;
+		&-h1 { font-size: 30px;
+			a { background-position: 0 32px; }
+		}
+	}
+	.dos { width: 600px; }
+}
+@media (max-width: 960px) {
+	.front { width: 600px;
+		&-cover { padding-bottom: 30px; }
+		&-h1 { font-size: 24px; padding: 30px;
+			a { background-position: 0 23px; }
+		}
+	}
+	.uno { width: 200px; }
+	.dos { width: 400px; }
+}
+@media (max-width: 568px) {
+	.front,
+	.uno,
+	.dos { width: 100%; }
+	.dos { padding: 25px; }
+}
